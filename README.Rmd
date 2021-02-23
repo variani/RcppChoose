@@ -35,7 +35,11 @@ This is a basic example which shows you how to choose `k` out of `n` numbers.
 ```{r example}
 library(RcppChoose)
 
-# choose: base R vs. RcppChoose implementation
+# 1. choose: base R vs. RcppChoose implementation
+# 1a. choose(10, 5)
+choose(10, 5)
+rcpp_choose(10, 5)
+# 1b choose(40, 20)
 choose(40, 20)
 rcpp_choose(40, 20)
 

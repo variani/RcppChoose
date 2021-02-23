@@ -25,7 +25,13 @@ numbers.
 ``` r
 library(RcppChoose)
 
-# choose: base R vs. RcppChoose implementation
+# 1. choose: base R vs. RcppChoose implementation
+# 1a. choose(10, 5)
+choose(10, 5)
+#> [1] 252
+rcpp_choose(10, 5)
+#> [1] 252
+# 1b choose(40, 20)
 choose(40, 20)
 #> [1] 137846528820
 rcpp_choose(40, 20)
