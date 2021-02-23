@@ -1,0 +1,5 @@
+configure
+config.*
+autom4te.cache/
+RcppChoose/src/Makevars
+

@@ -23,7 +23,7 @@ AC_SUBST([PKG_CPPFLAGS], ["${PKG_CPPFLAGS} ${CXXFLAGS} ${CHOOSE_INC}"])
 # PKG_LIBS = @PKG_LIBS@ @CHOOSE_LIB@
 AC_SUBST([PKG_LIBS], ["${PKG_LIBS} ${CHOOSE_LIB}"])
 # Destination Makefile
-AC_CONFIG_FILES([src/Makevars])
+AC_CONFIG_FILES([RcppChoose/src/Makevars])
 AC_OUTPUT
 
 echo "
