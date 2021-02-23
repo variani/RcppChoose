@@ -1,8 +1,0 @@
-^LICENSE\.md$
-
-# to be used by autoconf & hidden from R
-configure.ac
-configure
-src/Makevars.in 
-
-^README\.Rmd$
