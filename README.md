@@ -8,12 +8,30 @@
 <!-- badges: end -->
 
 RcppChoose is an example of project that combines two parts, C++ code
-([libChoose/](libChoose/) and R package [rpackage/](rpackage/).
+([libChoose/](libChoose/)) and R package ([rpackage/](rpackage/)).
 
-## Installation
+## Install
+
+    # 1. compile the c++ library 
+    # - output: libChoose/libChoose.a
+    pushd libChoose/
+    make
+    popd
+    
+    # 2. prepare Makefile for R package
+    # - output: rpkg/RcppChoose/src/Makevars
+    pushd rpkg
+    autoconf
+    ./configure
+    popd
+    
+    # 3. check R package is ready to use 
+    Rscript --slave -e "devtools::load_all('rpkg/RcppChoose')"
+
+## Usage
 
 ``` r
-devtools::load_all("rpackage/")
+devtools::load_all("rpkg/RcppChoose")
 #> Loading RcppChoose
 ```
 
@@ -31,7 +49,7 @@ choose(10, 5)
 #> [1] 252
 rcpp_choose(10, 5)
 #> [1] 252
-# 1b choose(40, 20)
+# 1b. choose(40, 20)
 choose(40, 20)
 #> [1] 137846528820
 rcpp_choose(40, 20)

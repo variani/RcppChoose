@@ -19,13 +19,32 @@ knitr::opts_chunk$set(
 <!-- badges: end -->
 
 RcppChoose is an example of project that combines two parts, 
-C++ code ([libChoose/](libChoose/) and R package [rpackage/](rpackage/).
+C++ code ([libChoose/](libChoose/)) and R package ([rpackage/](rpackage/)).
 
-## Installation
+## Install
 
+```
+# 1. compile the c++ library 
+# - output: libChoose/libChoose.a
+pushd libChoose/
+make
+popd
+
+# 2. prepare Makefile for R package
+# - output: rpkg/RcppChoose/src/Makevars
+pushd rpkg
+autoconf
+./configure
+popd
+
+# 3. check R package is ready to use 
+Rscript --slave -e "devtools::load_all('rpkg/RcppChoose')"
+```
+
+## Usage
 
 ```{r load}
-devtools::load_all("rpackage/")
+devtools::load_all("rpkg/RcppChoose")
 ```
 
 ## Example
@@ -39,7 +58,7 @@ library(RcppChoose)
 # 1a. choose(10, 5)
 choose(10, 5)
 rcpp_choose(10, 5)
-# 1b choose(40, 20)
+# 1b. choose(40, 20)
 choose(40, 20)
 rcpp_choose(40, 20)
 
