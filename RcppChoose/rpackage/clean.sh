@@ -7,5 +7,6 @@ rm -rf autom4te.cache
 
 # Rcpp compilation results
 rm -f src/*.o
+rm -f src/*.so
 rm -rf src/RcppExports.*
 
