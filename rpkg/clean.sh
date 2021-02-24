@@ -6,7 +6,7 @@ rm -f src/Makevars
 rm -rf autom4te.cache
 
 # Rcpp compilation results
-rm -f src/*.o
-rm -f src/*.so
-rm -rf src/RcppExports.*
+rm -f RcppChoose/src/*.o
+rm -f RcppChoose/src/*.so
+rm -rf RcppChoose/src/RcppExports.*
 
