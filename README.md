@@ -62,17 +62,21 @@ rcpp_nchoosek_sample(1000, 500, 100)
 
 ## Notes
 
-`configure.ac` is included in the list of [known
-files](https://blog.r-hub.io/2020/05/20/rbuildignore/#standard-known-directory-and-files)
-relevant for the R package development. So adding `configure.ac` to
-`.Rbuildignore` will have no effect, and the R building/loading commands
-will execute `configure.ac`. Here, this configuration file is separated
-from the source of R package.
+1.  `configure.ac` is included in the list of [known
+    files](https://blog.r-hub.io/2020/05/20/rbuildignore/#standard-known-directory-and-files)
+    relevant for the R package development. So adding `configure.ac` to
+    `.Rbuildignore` will have no effect, and the R building/loading
+    commands will execute `configure.ac`. Here, this configuration file
+    is separated from the source of R package in the directory
+    [rpkg/](rpkg/): [rpkg/configure.ac](rpkg/configure.ac) and the R
+    package directory [rpkg/RcppChoose/](rpkg/RcppChoose/).
 
-The compilation flag `-fPIC` is
-[necessary](https://stackoverflow.com/q/49503475) for building shared
-libraries. Ommiting this flag will lead to the following
+2.  The compilation flag `-fPIC` is
+    [necessary](https://stackoverflow.com/q/49503475) for building
+    shared libraries. Ommiting this flag will lead to the following
     error.
+
+<!-- end list -->
 
     /usr/bin/ld: RcppChoose/rpkg/../libChoose//libChoose.a(choose.o): relocation R_X86_64_32 against `.rodata' can not be used when making a shared object; recompile with -fPIC
     RcppChoose/rpkg/../libChoose//libChoose.a: error adding symbols: Bad value
